@@ -24,6 +24,9 @@ jobs:
       - name: Create executable JAR
         run: jar --create --file DigitalWatch4.jar --main-class digitalwatch4.DigitalWatch4 -C out .
 
+      - name: Copy JAR into input folder
+        run: Copy-Item -Path "DigitalWatch4.jar" -Destination "out/DigitalWatch4.jar"
+
       - name: Create Windows installer
         run: >
           jpackage
