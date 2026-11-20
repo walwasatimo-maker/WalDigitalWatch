@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05080d">
+  <meta name="description" content="A simple customizable digital clock that works in your browser.">
+  <title>Wal Digital Watch</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="watch" id="watch">
+    <header class="topbar">
+      <p class="brand">WAL <span>DIGITAL WATCH</span></p>
+      <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings">
+        <span aria-hidden="true">⚙</span> Settings
+      </button>
+    </header>
+
+    <section class="clock" aria-label="Current local time and date">
+      <p class="eyebrow" id="timezone">YOUR LOCAL TIME</p>
+      <time class="time" id="time" aria-label="Current time">--:--:--</time>
+      <p class="date" id="date">Loading date…</p>
+      <p class="seconds-note">TIME UPDATES AUTOMATICALLY</p>
+    </section>
+
+    <form class="settings" id="settings" hidden>
+      <h1>Clock settings</h1>
+      <label for="format">Time format</label>
+      <select id="format" name="format">
+        <option value="12">12-hour</option>
+        <option value="24">24-hour</option>
+      </select>
+
+      <label for="time-color">Time color</label>
+      <select id="time-color" name="time-color">
+        <option value="cyan">Cyan</option>
+        <option value="white">White</option>
+        <option value="yellow">Yellow</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+      </select>
+
+      <label for="date-color">Date color</label>
+      <select id="date-color" name="date-color">
+        <option value="green">Green</option>
+        <option value="cyan">Cyan</option>
+        <option value="white">White</option>
+        <option value="yellow">Yellow</option>
+        <option value="red">Red</option>
+      </select>
+
+      <label for="background">Background</label>
+      <select id="background" name="background">
+        <option value="black">Black</option>
+        <option value="dark-gray">Dark gray</option>
+        <option value="white-bg">White</option>
+        <option value="blue-bg">Blue</option>
+      </select>
+      <div class="settings-actions">
+        <button class="apply-button" type="submit">Apply settings</button>
+        <button class="reset-button" id="reset" type="button">Reset</button>
+      </div>
+    </form>
+
+    <footer>Works in your browser · No Java installation needed</footer>
+  </main>
+</body>
+</html>
